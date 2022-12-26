@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecommerce.Adapter.CategoryAdapter;
+import com.example.ecommerce.MainActivity;
 import com.example.ecommerce.Model.modelCategory;
 import com.example.ecommerce.R;
 import com.example.ecommerce.Shopkeeper.shopkeeperAccountInfo;
@@ -122,9 +123,13 @@ public class customerMain extends AppCompatActivity {
         }
         else if(id == R.id.search){
             return true;
-        }
-        else{
+        }else if(id == R.id.cart){
             Toast.makeText(getApplicationContext(),"Cart",Toast.LENGTH_SHORT).show();
+        }else{
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+            Toast.makeText(getApplicationContext(),"Succesfully Logout",Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }

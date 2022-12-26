@@ -14,6 +14,9 @@
     <item
         android:title="Contact for help"
         android:id="@+id/help"/>
+    <item
+        android:title="Logout"
+        android:id="@+id/logout"/>
 
     <item
         android:title="Search"

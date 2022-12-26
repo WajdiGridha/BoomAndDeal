@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
+import com.example.ecommerce.MainActivity;
 import com.example.ecommerce.Others.helpCare;
 import com.example.ecommerce.R;
 
@@ -75,9 +76,14 @@ public class shopkeeperMain extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Contact us",Toast.LENGTH_SHORT).show();
             return true;
         }
-        else{
+        else if (id == R.id.notifications){
             startActivity(new Intent(getApplicationContext(), notifications.class));
             Toast.makeText(getApplicationContext(),"Notifications",Toast.LENGTH_SHORT).show();
+        }else{
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+            Toast.makeText(getApplicationContext(),"Succesfully Logout",Toast.LENGTH_SHORT).show();
         }
 
         return super.onOptionsItemSelected(item);
