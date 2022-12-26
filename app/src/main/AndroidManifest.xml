@@ -45,7 +45,7 @@
 
         <activity android:name=".Customer.productCard"/>
 
-
+        <activity android:name=".Customer.customerAccountInfo"/>
 
 
     </application>

@@ -157,6 +157,7 @@ public class customerFragLogin extends Fragment {
                                 {
                                         Toast.makeText(getActivity(), "Logged in Successfully.", Toast.LENGTH_LONG).show();
                                         Intent intent = new Intent(getActivity(), customerMain.class);
+                                    intent.putExtra("cId",phone);
                                         startActivity(intent);
                                         onDestroy();
                                 }

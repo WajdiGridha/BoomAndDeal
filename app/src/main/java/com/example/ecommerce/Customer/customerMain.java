@@ -2,6 +2,7 @@ package com.example.ecommerce.Customer;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.ecommerce.Adapter.CategoryAdapter;
 import com.example.ecommerce.Model.modelCategory;
 import com.example.ecommerce.R;
+import com.example.ecommerce.Shopkeeper.shopkeeperAccountInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -105,7 +107,9 @@ public class customerMain extends AppCompatActivity {
         int id = item.getItemId();
 
         if(id == R.id.account_info){
-            Toast.makeText(getApplicationContext(),"Account info",Toast.LENGTH_SHORT).show();
+            Intent newIntent = new Intent(getApplicationContext(), customerAccountInfo.class);
+            newIntent.putExtra("cId",getIntent().getStringExtra("cId"));
+            startActivity(newIntent);
             return true;
         }
         else if(id == R.id.placed_orders){

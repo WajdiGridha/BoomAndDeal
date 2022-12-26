@@ -161,6 +161,7 @@ public class shopkeeperFragRegister extends Fragment{
                                         intent.putExtra("shopName",shopName);
                                         Intent valAtLogin = new Intent(getActivity(),shopkeeperFragLogin.class);
                                         valAtLogin.putExtra("shopName",shopName);
+                                        intent.putExtra("Id",shopNo);
                                         Toast.makeText(getActivity(), "Your account has been created successfully !", Toast.LENGTH_SHORT).show();
                                         startActivity(intent);
                                     }

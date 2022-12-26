@@ -154,6 +154,7 @@ public class customerFragRegister extends Fragment {
                                         Toast.makeText(getActivity(), "Your account has been created successfully !", Toast.LENGTH_SHORT).show();
 
                                         Intent intent = new Intent(getActivity(), customerMain.class);
+                                        intent.putExtra("cId",phone);
                                         startActivity(intent);
                                     }
                                     else
