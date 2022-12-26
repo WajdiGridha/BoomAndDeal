@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.ecommerce.Adapter.CategoryAdapter;
 import com.example.ecommerce.MainActivity;
 import com.example.ecommerce.Model.modelCategory;
+import com.example.ecommerce.Others.about;
 import com.example.ecommerce.R;
 import com.example.ecommerce.Shopkeeper.shopkeeperAccountInfo;
 
@@ -113,18 +114,14 @@ public class customerMain extends AppCompatActivity {
             startActivity(newIntent);
             return true;
         }
-        else if(id == R.id.placed_orders){
-            Toast.makeText(getApplicationContext(),"Orders",Toast.LENGTH_SHORT).show();
-            return true;
-        }
-        else if(id == R.id.help){
-            Toast.makeText(getApplicationContext(),"Contact us",Toast.LENGTH_SHORT).show();
+
+        else if(id == R.id.about){
+            Intent newIntent = new Intent(getApplicationContext(), about.class);
+            startActivity(newIntent);
             return true;
         }
         else if(id == R.id.search){
             return true;
-        }else if(id == R.id.cart){
-            Toast.makeText(getApplicationContext(),"Cart",Toast.LENGTH_SHORT).show();
         }else{
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);

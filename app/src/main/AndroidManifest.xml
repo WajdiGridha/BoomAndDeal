@@ -47,7 +47,7 @@
 
         <activity android:name=".Customer.customerAccountInfo"/>
 
-
+        <activity android:name=".Others.about"/>
     </application>
 
 </manifest>

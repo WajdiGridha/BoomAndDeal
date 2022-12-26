@@ -2,7 +2,6 @@ package com.example.ecommerce.Shopkeeper;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,7 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 import com.example.ecommerce.MainActivity;
-import com.example.ecommerce.Others.helpCare;
+import com.example.ecommerce.Others.about;
 import com.example.ecommerce.R;
 
 public class shopkeeperMain extends AppCompatActivity {
@@ -72,7 +71,7 @@ public class shopkeeperMain extends AppCompatActivity {
             return true;
         }
         else if(id == R.id.help){
-            startActivity(new Intent(getApplicationContext(), helpCare.class));
+            startActivity(new Intent(getApplicationContext(), about.class));
             Toast.makeText(getApplicationContext(),"Contact us",Toast.LENGTH_SHORT).show();
             return true;
         }
