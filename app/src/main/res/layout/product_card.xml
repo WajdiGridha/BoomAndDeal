@@ -190,5 +190,29 @@
         android:textSize="40sp"
         android:text="+"/>
 
+    <TextView
+        android:id="@+id/phoneN"
+        android:layout_width="156dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/prod_card_cart"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="132dp"
+        android:layout_marginEnd="122dp"
+        android:layout_marginBottom="142dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/prod_card_cart"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="296dp"
+        android:layout_marginBottom="142dp"
+        android:text="Phone number" />
+
 
 </RelativeLayout>

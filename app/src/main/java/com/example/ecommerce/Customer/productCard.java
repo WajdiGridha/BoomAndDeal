@@ -27,7 +27,7 @@ public class productCard extends AppCompatActivity {
     private String imUrl,cat;
     private String[] id;
     private ImageView prodImg;
-    private TextView prodPrice,prodName,shopName,prodId,shopId,quantity;
+    private TextView prodPrice,prodName,shopName,prodId,shopId,quantity,phone;
     private DatabaseReference Rootref;
     //private String id;
     private Button buy,cart,plus,minus;
@@ -53,6 +53,7 @@ public class productCard extends AppCompatActivity {
         shopName = (TextView) findViewById(R.id.prod_shop_name);
         prodId = (TextView) findViewById(R.id.prod_id);
         shopId = (TextView) findViewById(R.id.shop_id);
+        phone = (TextView) findViewById(R.id.phoneN);
 
         buy = (Button) findViewById(R.id.prod_card_buy);
         cart = (Button) findViewById(R.id.prod_card_cart);
@@ -83,7 +84,7 @@ public class productCard extends AppCompatActivity {
             }
         });
 
-        cart.setOnClickListener(new View.OnClickListener() {
+        /*cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Toast.makeText(getApplicationContext(),prodName.getText() +","+prodPrice.getText(),Toast.LENGTH_SHORT).show();
@@ -99,9 +100,9 @@ public class productCard extends AppCompatActivity {
                     startActivity(intent);
                 }
             }
-        });
+        });*/
 
-        plus.setOnClickListener(new View.OnClickListener() {
+        /*plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int qt = Integer.parseInt(quantity.getText().toString());
@@ -113,9 +114,9 @@ public class productCard extends AppCompatActivity {
                     quantity.setText(String.valueOf(qt));
                 }
             }
-        });
+        });*/
 
-        minus.setOnClickListener(new View.OnClickListener() {
+        /*minus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int qt = Integer.parseInt(quantity.getText().toString());
@@ -127,7 +128,7 @@ public class productCard extends AppCompatActivity {
                     quantity.setText(String.valueOf(qt));
                 }
             }
-        });
+        });*/
 
     }
 
@@ -145,6 +146,7 @@ public class productCard extends AppCompatActivity {
                         shopName.setText(Objects.requireNonNull(product.child("Shop Name").getValue()).toString());
                         prodId.setText(Objects.requireNonNull(product.child("Product Id").getValue()).toString());
                         shopId.setText(Objects.requireNonNull(product.child("Product Discount").getValue()).toString());
+                    phone.setText(Objects.requireNonNull(product.child("Phone Number").getValue()).toString());
                         //id = product.getKey();
                 }
 
