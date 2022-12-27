@@ -138,16 +138,16 @@ public class productCard extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot product : snapshot.getChildren()){
-                        //price = product.child("Product Name").getValue().toString();
-                        //name = product.child("Product Price").getValue().toString();
-                        prodName.setText(Objects.requireNonNull(product.child("Product Name").getValue()).toString());
-                        prodPrice.setText(Objects.requireNonNull(product.child("Product Price").getValue()).toString());
+                    //price = product.child("Product Name").getValue().toString();
+                    //name = product.child("Product Price").getValue().toString();
+                    prodName.setText(Objects.requireNonNull(product.child("Product Name").getValue()).toString());
+                    prodPrice.setText(Objects.requireNonNull(product.child("Product Price").getValue()).toString());
 
-                        shopName.setText(Objects.requireNonNull(product.child("Shop Name").getValue()).toString());
-                        prodId.setText(Objects.requireNonNull(product.child("Product Id").getValue()).toString());
-                        shopId.setText(Objects.requireNonNull(product.child("Product Discount").getValue()).toString());
+                    shopName.setText(Objects.requireNonNull(product.child("Shop Name").getValue()).toString());
+                    prodId.setText(Objects.requireNonNull(product.child("Product Id").getValue()).toString());
+                    shopId.setText(Objects.requireNonNull(product.child("Product Discount").getValue()).toString());
                     phone.setText(Objects.requireNonNull(product.child("Phone Number").getValue()).toString());
-                        //id = product.getKey();
+                    //id = product.getKey();
                 }
 
             }
