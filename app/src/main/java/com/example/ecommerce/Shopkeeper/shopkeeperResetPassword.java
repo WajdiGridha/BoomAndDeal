@@ -61,7 +61,9 @@ public class shopkeeperResetPassword extends AppCompatActivity {
                 else{
                     Rootref.child(parentDbName).child(shopNo).child("password").setValue(pass1);
                     Toast.makeText(shopkeeperResetPassword.this,"Password changed successfully",Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(),shopkeeperMain.class));
+                    Intent intent = new Intent(getApplicationContext(), shopkeeperMain.class);
+                    intent.putExtra("Id",shopNo);
+                    startActivity(intent);
                 }
 
             }

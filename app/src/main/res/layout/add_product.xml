@@ -53,23 +53,22 @@
 
   </RelativeLayout>
 
-    <EditText
-        android:id="@+id/set_product_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:hint="Enter Product Name"
-        android:textSize="15sp"
-        android:textColor="@android:color/black"
-        android:inputType="text"
-        android:layout_below="@id/spinner_main"
-        android:background="@drawable/input_design"
-        android:layout_marginTop="30dp">
-    </EditText>
+  <EditText
+      android:id="@+id/set_product_name"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/spinner_main"
+      android:layout_marginLeft="25dp"
+      android:layout_marginTop="7dp"
+      android:layout_marginRight="25dp"
+      android:background="@drawable/input_design"
+      android:hint="Enter Product Name"
+      android:inputType="text"
+      android:padding="20dp"
+      android:textColor="@android:color/black"
+      android:textSize="15sp"></EditText>
 
-    <EditText
+  <EditText
         android:id="@+id/set_product_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -119,41 +118,38 @@
       android:layout_marginTop="15dp">
   </EditText>
 
+
   <TextView
       android:id="@+id/textView4"
-      android:layout_below="@id/set_product_price"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:textSize="17sp"
+      android:layout_below="@id/set_product_price"
+      android:layout_marginTop="11dp"
       android:text="Upload a picture of the product by clicking the camera icon below"
-      android:layout_marginTop="30dp"
-      android:textColor="@color/Red"
       android:textAlignment="center"
-      android:textStyle="bold|italic">
-  </TextView>
+      android:textColor="@color/Red"
+      android:textSize="17sp"
+      android:textStyle="bold|italic"></TextView>
 
   <ImageView
       android:id="@+id/upload_pic"
-      android:layout_below="@id/textView4"
-      android:layout_marginTop="20dp"
-      android:src="@drawable/ic_add_photo"
-      android:layout_centerHorizontal="true"
       android:layout_width="70dp"
-      android:layout_height="70dp">
-      </ImageView>
-
+      android:layout_height="70dp"
+      android:layout_below="@id/textView4"
+      android:layout_alignParentEnd="true"
+      android:layout_marginTop="3dp"
+      android:layout_marginEnd="140dp"
+      android:src="@drawable/ic_add_photo"></ImageView>
 
   <EditText
       android:id="@+id/phone_number"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
 
-      android:layout_above="@+id/add_product_btn"
       android:layout_below="@+id/upload_pic"
       android:layout_marginLeft="25dp"
-      android:layout_marginTop="36dp"
+      android:layout_marginTop="2dp"
       android:layout_marginRight="25dp"
-      android:layout_marginBottom="31dp"
       android:background="@drawable/input_design"
       android:hint="Enter your phone number"
       android:inputType="number"
@@ -164,18 +160,21 @@
 
   <Button
       android:id="@+id/add_product_btn"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_alignParentBottom="true"
+      android:layout_width="301dp"
+      android:layout_height="61dp"
+      android:layout_below="@+id/upload_pic"
+      android:layout_alignEnd="@+id/phone_number"
       android:layout_alignParentStart="true"
-      android:layout_marginBottom="25dp"
+      android:layout_marginStart="55dp"
       android:layout_marginLeft="80dp"
+      android:layout_marginTop="77dp"
+      android:layout_marginEnd="30dp"
       android:layout_marginRight="80dp"
-      android:padding="20dp"
-      android:textAllCaps="true"
-      android:textSize="18sp"
       android:background="@drawable/buttons"
-      android:text="Add product" />
+      android:padding="20dp"
+      android:text="Add product"
+      android:textAllCaps="true"
+      android:textSize="18sp" />
 
 
 </RelativeLayout>

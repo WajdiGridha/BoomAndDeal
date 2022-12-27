@@ -60,9 +60,11 @@ public class customerResetPassword extends AppCompatActivity {
                 else{
                     assert phoneNo != null;
                     Rootref.child(parentDbName).child(phoneNo).child("password").setValue(pass1);
+
                     Toast.makeText(customerResetPassword.this,"Password changed successfully",Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(), customerMain.class));
-                }
+                    Intent intent = new Intent(getApplicationContext(), customerMain.class);
+                    intent.putExtra("cId",phoneNo);
+                    startActivity(intent);                }
             }
         });
 

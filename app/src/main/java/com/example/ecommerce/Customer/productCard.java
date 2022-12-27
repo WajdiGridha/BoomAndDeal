@@ -1,6 +1,9 @@
 package com.example.ecommerce.Customer;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.bumptech.glide.Glide;
 import com.example.ecommerce.R;
@@ -64,43 +68,29 @@ public class productCard extends AppCompatActivity {
         //prodName.setText(name);
         //prodPrice.setText(price);
 
-        plus = (Button) findViewById(R.id.prod_plus);
-        minus = (Button) findViewById(R.id.prod_minus);
-        quantity = (TextView) findViewById(R.id.prod_card_quantity);
+        //plus = (Button) findViewById(R.id.prod_plus);
+        //minus = (Button) findViewById(R.id.prod_minus);
+        //quantity = (TextView) findViewById(R.id.prod_card_quantity);
 
         buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(getApplicationContext(),id,Toast.LENGTH_SHORT).show();
-                if(!buyState){
-                    buyState = true;
-                    Intent intent = new Intent(getApplicationContext(), productCard.class);
-                    startActivity(intent);
-                }
-                else{
-                    buyState = false;
-                    Toast.makeText(getApplicationContext(),"Already clicked buy",Toast.LENGTH_SHORT).show();
-                }
+                //Toast.makeText(getApplicationContext(),phone.getText().toString(),Toast.LENGTH_SHORT).show();
+                String number = phone.getText().toString().trim();
+                Intent callIntent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:"+Uri.encode(number)));
+                startActivity(callIntent);
             }
         });
 
-        /*cart.setOnClickListener(new View.OnClickListener() {
+        cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(getApplicationContext(),prodName.getText() +","+prodPrice.getText(),Toast.LENGTH_SHORT).show();
-                if(!cartState){
-                    cartState = true;
-                    Toast.makeText(getApplicationContext(),quantity.getText()+" items Added to cart",Toast.LENGTH_SHORT).show();
-                    cart.setText("Continue shopping");
-                    buy.setText("Move to my bag");
-                }
-                else{
-                    cartState = false;
+
                     Intent intent = new Intent(getApplicationContext(), customerMain.class);
                     startActivity(intent);
-                }
+
             }
-        });*/
+        });
 
         /*plus.setOnClickListener(new View.OnClickListener() {
             @Override
