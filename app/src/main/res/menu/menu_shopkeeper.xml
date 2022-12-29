@@ -7,10 +7,6 @@
         android:id="@+id/account_info"/>
 
     <item
-        android:title="Orders"
-        android:id="@+id/placed_orders"/>
-
-    <item
         android:title="Contact for help"
         android:id="@+id/help"/>
     <item

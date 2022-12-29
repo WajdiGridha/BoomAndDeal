@@ -25,7 +25,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginTop="280dp"
         android:textAlignment="center"
-        android:text="Discover, find and buy all types of products from your nearest and trusted shops."
+        android:text="اي نعم ، جاء الوقت و بومنديل ولات على الأنترنات"
         android:textColor="@android:color/black"
         android:textSize="22sp"
         android:textStyle="bold|italic"

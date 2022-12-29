@@ -65,20 +65,13 @@ public class shopkeeperMain extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Account info",Toast.LENGTH_SHORT).show();
             return true;
         }
-        else if(id == R.id.placed_orders){
-            startActivity(new Intent(getApplicationContext(), receivedOrders.class));
-            Toast.makeText(getApplicationContext(),"Orders",Toast.LENGTH_SHORT).show();
-            return true;
-        }
+
         else if(id == R.id.help){
             startActivity(new Intent(getApplicationContext(), about.class));
             Toast.makeText(getApplicationContext(),"Contact us",Toast.LENGTH_SHORT).show();
             return true;
         }
-        else if (id == R.id.notifications){
-            startActivity(new Intent(getApplicationContext(), notifications.class));
-            Toast.makeText(getApplicationContext(),"Notifications",Toast.LENGTH_SHORT).show();
-        }else{
+        else{
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
