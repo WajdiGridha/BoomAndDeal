@@ -1,20 +1,20 @@
 package com.example.ecommerce.Customer;
 
-import android.Manifest;
+
 import android.content.Intent;
-import android.content.pm.PackageManager;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
+
 
 import com.bumptech.glide.Glide;
 import com.example.ecommerce.R;
@@ -33,9 +33,7 @@ public class productCard extends AppCompatActivity {
     private ImageView prodImg;
     private TextView prodPrice,prodName,shopName,prodId,shopId,quantity,phone;
     private DatabaseReference Rootref;
-    //private String id;
-    private Button buy,cart,plus,minus;
-    boolean buyState = false,cartState = false;
+    private Button buy,cart;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,17 +63,12 @@ public class productCard extends AppCompatActivity {
         SearchFirebase();
 
         Glide.with(getApplicationContext()).load(imUrl).into(prodImg);
-        //prodName.setText(name);
-        //prodPrice.setText(price);
 
-        //plus = (Button) findViewById(R.id.prod_plus);
-        //minus = (Button) findViewById(R.id.prod_minus);
-        //quantity = (TextView) findViewById(R.id.prod_card_quantity);
 
         buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(getApplicationContext(),phone.getText().toString(),Toast.LENGTH_SHORT).show();
+
                 String number = phone.getText().toString().trim();
                 Intent callIntent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:"+Uri.encode(number)));
                 startActivity(callIntent);
@@ -92,33 +85,7 @@ public class productCard extends AppCompatActivity {
             }
         });
 
-        /*plus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int qt = Integer.parseInt(quantity.getText().toString());
-                if(qt == 9){
-                    Toast.makeText(getApplicationContext(),"Sorry! Operation can't be performed",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    qt = qt+1;
-                    quantity.setText(String.valueOf(qt));
-                }
-            }
-        });*/
 
-        /*minus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int qt = Integer.parseInt(quantity.getText().toString());
-                if(qt == 1){
-                    Toast.makeText(getApplicationContext(),"Sorry! Operation can't be performed",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    qt = qt-1;
-                    quantity.setText(String.valueOf(qt));
-                }
-            }
-        });*/
 
     }
 
@@ -128,8 +95,7 @@ public class productCard extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot product : snapshot.getChildren()){
-                    //price = product.child("Product Name").getValue().toString();
-                    //name = product.child("Product Price").getValue().toString();
+
                     prodName.setText(Objects.requireNonNull(product.child("Product Name").getValue()).toString());
                     prodPrice.setText(Objects.requireNonNull(product.child("Product Price").getValue()).toString());
 
@@ -137,7 +103,7 @@ public class productCard extends AppCompatActivity {
                     prodId.setText(Objects.requireNonNull(product.child("Product Id").getValue()).toString());
                     shopId.setText(Objects.requireNonNull(product.child("Product Discount").getValue()).toString());
                     phone.setText(Objects.requireNonNull(product.child("Phone Number").getValue()).toString());
-                    //id = product.getKey();
+
                 }
 
             }
